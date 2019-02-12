@@ -2,29 +2,30 @@
 
 ## Topics:
 
-- Node.js and Express.
-- HTTP methods and status codes.
-- Reading Request data from body, URL parameters and query string parameters.
-- API design and development.
+x Node.js and Express.
+x HTTP methods and status codes.
+x Reading Request data from body, URL parameters and query string parameters.
+x API design and development.
 
 ## Assignment
 
-Use Node.js and Express to build an API that performs _CRUD_ operations on `posts`.
+x Use Node.js and Express to build an API that performs _CRUD_ operations on `posts`.
 
 **This is a two day project.**
 
-- **Due Monday**: the server with the `GET` endpoints.
+x- **Due Monday**: the server with the `GET` endpoints.
+
 - **Due Tuesday**: the `POST`, `PUT` and `DELETE` endpoints.
 
 ### Download Project Files and Install Dependencies
 
-- **Fork** and **Clone** this repository.
-- **CD into the folder** where you cloned the repository.
-- Type `yarn` or `npm install` to download all dependencies listed inside `package.json`.
+x **Fork** and **Clone** this repository.
+x **CD into the folder** where you cloned the repository.
+x Type `yarn` or `npm install` to download all dependencies listed inside `package.json`.
 
 ### Database access
 
-Database access will be done using the `db.js` file included inside the `data` folder. This file publishes the following methods:
+x Database access will be done using the `db.js` file xincluded inside the `data` folder. This file publishes the following methods:
 
 - `find()`: calling find returns a promise that resolves to an array of all the `posts` contained in the database.
 - `findById()`: this method expects an `id` as it's only parameter and returns the post corresponding to the `id` provided or an empty array if no post with that `id` is found.
