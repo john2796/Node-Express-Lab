@@ -146,11 +146,11 @@ x return the following JSON object: `{ message: "The post with the specified ID 
   x respond with HTTP status code `500`.
   x return the following JSON object: `{ error: "The post information could not be modified." }`.
 
-- If the post is found and the new information is valid:
+x If the post is found and the new information is valid:
 
-  - update the post document in the database using the new information sent in the `request body`.
-  - return HTTP status code `200` (OK).
-  - return the newly updated _post_.
+x update the post document in the database using the new information sent in the `request body`.
+x return HTTP status code `200` (OK).
+x return the newly updated _post_.
 
 ## Stretch Problems
 

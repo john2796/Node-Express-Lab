@@ -16,6 +16,7 @@ server.get("/", (req, res) => {
         .json({ message: "The posts information could not be retrieved" });
     });
 });
+
 // @route    POSt api/posts
 // @desc     Post
 // @Access   Public
