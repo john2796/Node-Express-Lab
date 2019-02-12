@@ -27,23 +27,23 @@ x Type `yarn` or `npm install` to download all dependencies listed inside `packa
 
 x Database access will be done using the `db.js` file xincluded inside the `data` folder. This file publishes the following methods:
 
-- `find()`: calling find returns a promise that resolves to an array of all the `posts` contained in the database.
-- `findById()`: this method expects an `id` as it's only parameter and returns the post corresponding to the `id` provided or an empty array if no post with that `id` is found.
-- `insert()`: calling insert passing it a `post` object will add it to the database and return an object with the `id` of the inserted post. The object looks like this: `{ id: 123 }`.
-- `update()`: accepts two arguments, the first is the `id` of the post to update and the second is an object with the `changes` to apply. It returns the count of updated records. If the count is 1 it means the record was updated correctly.
-- `remove()`: the remove method accepts an `id` as it's first parameter and upon successfully deleting the post from the database it returns the number of records deleted.
+x `find()`: calling find returns a promise that resolves to an array of all the `posts` contained in the database.
+x `findById()`: this method expects an `id` as it's only parameter and returns the post corresponding to the `id` provided or an empty array if no post with that `id` is found.
+x `insert()`: calling insert passing it a `post` object will add it to the database and return an object with the `id` of the inserted post. The object looks like this: `{ id: 123 }`.
+x `update()`: accepts two arguments, the first is the `id` of the post to update and the second is an object with the `changes` to apply. It returns the count of updated records. If the count is 1 it means the record was updated correctly.
+x `remove()`: the remove method accepts an `id` as it's first parameter and upon successfully deleting the post from the database it returns the number of records deleted.
 
-Now that we have a way to add, update, remove and retrieve data from the provided database, it is time to work on the API.
+x Now that we have a way to add, update, remove and retrieve data from the provided database, it is time to work on the API.
 
 ### Start the API and Implement Requirements
 
-- To start the server, type `yarn server` or `npm run server` from the root folder (where the _package.json_ file is). The server is configured to restart automatically as you make changes.
-- Add the code necessary to implement the API requirements.
-- **Test the API using [Postman](https://www.getpostman.com/) as you work through the exercises.**
+x To start the server, type `yarn server` or `npm run server` from the root folder (where the _package.json_ file is). The server is configured to restart automatically as you make changes.
+x Add the code necessary to implement the API requirements.
+x **Test the API using [Postman](https://www.getpostman.com/) as you work through the exercises.**
 
 ### Post Schema
 
-Posts in the database conform to the following structure:
+x Posts in the database conform to the following structure:
 
 ```js
 {
@@ -57,9 +57,9 @@ contents of the post, also as a String.
 
 ### Provided Code
 
-We have provided an `index.js` file and a folder called `data`. Inside the `data` folder we have added a database with some posts already populated that you can use to test your endpoints as you build them.
+x We have provided an `index.js` file and a folder called `data`. Inside the `data` folder we have added a database with some posts already populated that you can use to test your endpoints as you build them.
 
-Server.js already has `db.js` required and ready for you to use when building your endpoints.
+x Server.js already has `db.js` required and ready for you to use when building your endpoints.
 
 ### Write endpoints to perform the following queries.
 
@@ -94,7 +94,7 @@ When the client makes a `POST` request to `/api/posts`:
   - respond with HTTP status code `500` (Server Error).
   - return the following JSON object: `{ error: "There was an error while saving the post to the database" }`.
 
-When the client makes a `GET` request to `/api/posts`:
+* When the client makes a `GET` request to `/api/posts`:
 
 - If there's an error in retrieving the _posts_ from the database:
   - cancel the request.
