@@ -9,6 +9,6 @@ server.use(express.json());
 //use server
 server.use("/api/posts", postRoutes);
 //listenting server
-server.listen(5000, () => {
+server.listen(port, () => {
   console.log(`++++++++ Server running on port ${port} ++++++++`);
 });
