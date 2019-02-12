@@ -2,10 +2,7 @@ const express = require("express");
 const server = express.Router();
 const db = require("../../data/db");
 
-// @route    GET api/posts
-// @desc     Fetch All Post
-// @Access   Public
-server.get("/", (req, res) => {
+const getAllItems = (req, res) => {
   db.find()
     .then(post => {
       res.status(200).json(post);
@@ -15,6 +12,12 @@ server.get("/", (req, res) => {
         .status(500)
         .json({ message: "The posts information could not be retrieved" });
     });
+};
+// @route    GET api/posts
+// @desc     Fetch All Post
+// @Access   Public
+server.get("/", (req, res) => {
+  getAllItems(req, res);
 });
 
 // @route    POSt api/posts
@@ -30,15 +33,7 @@ server.post("/", (req, res) => {
   }
   db.insert(req.body)
     .then(post => {
-      db.find()
-        .then(post => {
-          res.status(200).json(post);
-        })
-        .catch(err => {
-          res
-            .status(500)
-            .json({ message: "The posts information could not be retrieved" });
-        });
+      getAllItems(req, res);
       // res.status(201).json(post);
     })
     .catch(err => {
@@ -75,18 +70,8 @@ server.delete("/:id", (req, res) => {
   const { id } = req.params;
   db.remove(id)
     .then(posts => {
-      console.log("posts", posts);
       if (posts > 0) {
-        db.find()
-          .then(post => {
-            console.log(post);
-            res.status(200).json(post);
-          })
-          .catch(err => {
-            res.status(500).json({
-              message: "The posts information could not be retrieved"
-            });
-          });
+        getAllItems(req, res);
       } else {
         res.status(404).json({
           message: "The user with the specified ID does not exist"
@@ -99,7 +84,6 @@ server.delete("/:id", (req, res) => {
         .json({ success: false, message: "The user could not be removed" })
     );
 });
-
 // @route    UPDATE api/posts/:id
 // @desc     Update Single Post
 // @Access   Public
@@ -115,16 +99,7 @@ server.put("/:id", (req, res) => {
   db.update(id, req.body)
     .then(posts => {
       if (posts) {
-        db.find()
-          .then(post => {
-            console.log(post);
-            res.status(200).json(post);
-          })
-          .catch(err => {
-            res.status(500).json({
-              message: "The posts information could not be retrieved"
-            });
-          });
+        getAllItems(req, res);
         // res.status(200).json(posts);
       } else {
         res
